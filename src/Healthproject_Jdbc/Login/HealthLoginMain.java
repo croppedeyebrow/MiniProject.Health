@@ -1,5 +1,6 @@
 package Healthproject_Jdbc.Login;
 
+import Healthproject_Jdbc.FirstVIEW.FirstVIEMain;
 import Healthproject_Jdbc.MainView.MainViewMain;
 import Healthproject_Jdbc.common.Common;
 
@@ -56,6 +57,7 @@ public class HealthLoginMain {
 
                 case 2:
                     System.out.println("초기 화면으로 돌아갑니다");
+                    FirstVIEMain.main(args);
                     return;
                 default:
                     System.out.println("올바른 선택을 하지 않았습니다. 다시 선택해주세요");

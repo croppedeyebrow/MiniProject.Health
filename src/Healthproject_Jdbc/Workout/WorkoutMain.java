@@ -3,17 +3,20 @@ package Healthproject_Jdbc.Workout;
 
 
 
+import java.sql.Connection;
 import java.util.List;
 import java.util.Scanner;
 
 public class WorkoutMain {
+    private static Connection conn;
+
     public static void main(String[] args) {
         workoutList();
     }
 
     public static void workoutList() {
         Scanner sc = new Scanner(System.in);
-        WorkoutDao dao = new WorkoutDao();
+        WorkoutDao dao = new WorkoutDao(conn);
 
         int workoutTypeSel = 0; // 운동 종류를 저장할 변수
         int hours = 0;

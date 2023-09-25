@@ -3,7 +3,7 @@ package Healthproject_Jdbc.MainView;
 import Healthproject_Jdbc.Challenge.ChallengeMain;
 import Healthproject_Jdbc.Food.FoodMain;
 import Healthproject_Jdbc.Login.HealthLoginMain;
-import Healthproject_Jdbc.TotalControl.TotalControlMain;
+import Healthproject_Jdbc.TotalContrl.TotalControlMain;
 import Healthproject_Jdbc.Workout.WorkoutMain;
 
 import java.util.Scanner;

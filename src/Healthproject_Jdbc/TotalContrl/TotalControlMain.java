@@ -1,4 +1,4 @@
-package Healthproject_Jdbc.TotalControl;
+package Healthproject_Jdbc.TotalContrl;
 
 public class TotalControlMain {
     public static void main(String[] args) {

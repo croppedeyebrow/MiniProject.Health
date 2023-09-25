@@ -11,6 +11,9 @@ public class FoodDao {
     private PreparedStatement pstmt;
     private ResultSet rs;
 
+    public FoodDao(Connection conn) {
+        this.conn=conn;
+    }
 
 
     //식품 정보 추가

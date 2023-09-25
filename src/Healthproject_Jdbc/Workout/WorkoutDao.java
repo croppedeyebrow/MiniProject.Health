@@ -13,6 +13,10 @@ public class WorkoutDao {
     PreparedStatement pstmt = null;
     ResultSet rs = null;
 
+    public WorkoutDao(Connection conn) {
+        this.conn =conn;
+    }
+
     public List<WorkoutVo> WorkoutSelect() {
         List<WorkoutVo> list = new ArrayList<>();
         try {

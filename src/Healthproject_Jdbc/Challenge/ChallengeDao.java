@@ -2,7 +2,7 @@ package Healthproject_Jdbc.Challenge;
 
 
 import Healthproject_Jdbc.Food.FoodDao;
-import Healthproject_Jdbc.Workout.WorkoutDao;
+import Healthproject_Jdbc.Workout.WorkoutDAO;
 import Healthproject_Jdbc.common.Common;
 
 import java.sql.Connection;
@@ -16,10 +16,10 @@ public class ChallengeDao {
     private Connection conn;
     private PreparedStatement pstmt;
     private ResultSet rs;
-    private WorkoutDao workoutDao;
+    private WorkoutDAO workoutDao;
     private FoodDao foodDao;
 
-    public ChallengeDao(Connection conn, WorkoutDao workoutDao, FoodDao foodDao) {
+    public ChallengeDao(Connection conn, WorkoutDAO workoutDao, FoodDao foodDao) {
         this.conn =conn;
         this.workoutDao = workoutDao;
         this.foodDao = foodDao;
@@ -153,7 +153,7 @@ public class ChallengeDao {
         }
     }
 
-    //운동 및 식단 점수 추가
+    // 식단 점수 추가
     public boolean UpdateTotalScore(int RANKTbId, int breakfast, int lunch, int dinner) {
         int additionalScore = 0;
 

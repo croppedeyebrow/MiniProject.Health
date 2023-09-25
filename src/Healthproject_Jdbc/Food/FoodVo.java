@@ -1,24 +1,35 @@
 package Healthproject_Jdbc.Food;
 
 public class FoodVo {
-    public String foodName; // 식품명
-    public int kcal; // 칼로리
-    public int tan; // 탄수화물
-    public int dan; // 단백질
-    public int ji; // 지방
-    public int eatTime; // 식사분기
-    public int price; // 식단 가격
-    public String gfbf; // 식단수준
+    private int foodID;
+    private String foodName; // 식품명
+    private int fCal; // 칼로리
+    private int fTan; // 탄수화물량
+    private int fDan; // 단백질량
+    private int fJi; // 지방량
+    private int eatTime; // 식사시간대
+    private int fPrice; // 식단 가격
+    private int healthyGbn; // 건강식단여부
 
-    public FoodVo(String foodName, int kcal, int tan, int dan, int ji, int eatTime, int price, String gfbf) {
+    public FoodVo(int foodID, String foodName, int fCal, int fTan, int fDan, int fJi, int eatTime, int fPrice, int healthyGbn) {
+        this.foodID = foodID;
         this.foodName = foodName;
-        this.kcal = kcal;
-        this.tan = tan;
-        this.dan = dan;
-        this.ji = ji;
+        this.fCal = fCal;
+        this.fTan = fTan;
+        this.fDan = fDan;
+        this.fJi = fJi;
         this.eatTime = eatTime;
-        this.price = price;
-        this.gfbf = gfbf;
+        this.fPrice = fPrice;
+        this.healthyGbn = healthyGbn;
+
+    }
+
+    public int getFoodID() {
+        return foodID;
+    }
+
+    public void setFoodID(int foodID) {
+        this.foodID = foodID;
     }
 
     public String getFoodName() {
@@ -29,36 +40,36 @@ public class FoodVo {
         this.foodName = foodName;
     }
 
-    public int getKcal() {
-        return kcal;
+    public int getfCal() {
+        return fCal;
     }
 
-    public void setKcal(int kcal) {
-        this.kcal = kcal;
+    public void setfCal(int fCal) {
+        this.fCal = fCal;
     }
 
-    public int getTan() {
-        return tan;
+    public int getfTan() {
+        return fTan;
     }
 
-    public void setTan(int tan) {
-        this.tan = tan;
+    public void setfTan(int fTan) {
+        this.fTan = fTan;
     }
 
-    public int getDan() {
-        return dan;
+    public int getfDan() {
+        return fDan;
     }
 
-    public void setDan(int dan) {
-        this.dan = dan;
+    public void setfDan(int fDan) {
+        this.fDan = fDan;
     }
 
-    public int getJi() {
-        return ji;
+    public int getfJi() {
+        return fJi;
     }
 
-    public void setJi(int ji) {
-        this.ji = ji;
+    public void setfJi(int fJi) {
+        this.fJi = fJi;
     }
 
     public int getEatTime() {
@@ -69,20 +80,20 @@ public class FoodVo {
         this.eatTime = eatTime;
     }
 
-    public int getPrice() {
-        return price;
+    public int getfPrice() {
+        return fPrice;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setfPrice(int fPrice) {
+        this.fPrice = fPrice;
     }
 
-    public String getGfbf() {
-        return gfbf;
+    public int getHealthyGbn() {
+        return healthyGbn;
     }
 
-    public void setGfbf(String gfbf) {
-        this.gfbf = gfbf;
+    public void setHealthyGbn(int healthyGbn) {
+        this.healthyGbn = healthyGbn;
     }
 }
 

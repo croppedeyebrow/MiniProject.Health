@@ -16,20 +16,21 @@ public class FoodDao {
     }
 
 
+
     //식품 정보 추가
     public boolean AddFood(FoodVo food) {
         try {
-            String sql = "INSERT INTO food (foodName, kcal, tan, dan, ji, eatTime, price, gfbf)" +
+            String sql = "INSERT INTO food (foodName, fCal, fTan, fDan, fJi, eatTime, fPrice, healthyGbn)" +
                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setString(1, food.foodName);
-            statement.setInt(2, food.kcal);
-            statement.setInt(3, food.tan);
-            statement.setInt(4, food.dan);
-            statement.setInt(5, food.ji);
-            statement.setInt(6, food.eatTime);
-            statement.setInt(7, food.price);
-            statement.setString(8, food.gfbf);
+            statement.setString(1, food.getFoodName());
+            statement.setInt(2, food.getfCal());
+            statement.setInt(3, food.getfTan());
+            statement.setInt(4, food.getfDan());
+            statement.setInt(5, food.getfJi());
+            statement.setInt(6, food.getEatTime());
+            statement.setInt(7, food.getfPrice());
+            statement.setInt(8, food.getHealthyGbn());
 
             int rowsInserted = statement.executeUpdate();
             return rowsInserted > 0;
@@ -61,17 +62,17 @@ public class FoodDao {
     //식품 정보 수정
     public boolean updateFood(String foodname, FoodVo newFood) {
         try {
-            String sql ="UPDATE food SET kcal=?, tan=?, dan=?, ji=?, eatTime=?, price=?, gfbf=? " +
+            String sql ="UPDATE food SET fCal=?, fTan=?, fDan=?, fJi=?, eatTime=?, fPrice=?, healthyGbn=? " +
                     "WHERE foodName=?";
             PreparedStatement statement = conn.prepareStatement(sql);
-            statement.setInt(1, newFood.kcal);
-            statement.setInt(2, newFood.tan);
-            statement.setInt(3, newFood.dan);
-            statement.setInt(4, newFood.ji);
-            statement.setInt(5, newFood.eatTime);
-            statement.setInt(6, newFood.price);
-            statement.setString(7, newFood.gfbf);
-            statement.setString(8, newFood.foodName);
+            statement.setInt(1, newFood.getfCal());
+            statement.setInt(2, newFood.getfTan());
+            statement.setInt(3, newFood.getfDan());
+            statement.setInt(4, newFood.getfJi());
+            statement.setInt(5, newFood.getEatTime());
+            statement.setInt(6, newFood.getfPrice());
+            statement.setInt(7, newFood.getHealthyGbn());
+            statement.setString(8, newFood.getFoodName());
 
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
@@ -93,23 +94,25 @@ public class FoodDao {
 
             while (resultSet.next()) {
                 String foodName = resultSet.getString("foodName");
-                int kcal = resultSet.getInt("kcal");
-                int tan = resultSet.getInt("tan");
-                int dan = resultSet.getInt("dan");
-                int ji = resultSet.getInt("ji");
+                int fCal = resultSet.getInt("fCal");
+                int fTan = resultSet.getInt("fTan");
+                int fDan = resultSet.getInt("fDan");
+                int fJi = resultSet.getInt("fJi");
                 int eatTime = resultSet.getInt("eatTime");
-                int price = resultSet.getInt("price");
-                String gfbf = resultSet.getString("gfbf");
+                int fPrice = resultSet.getInt("fPrice");
+                int healthyGbn = resultSet.getInt("healthyGbn");
 
                 System.out.println("오늘 먹은 음식은 : " + foodName);
-                System.out.println("이 음식의 칼로리는? : " + kcal);
-                System.out.println("탄수화물량은? : " + tan);
-                System.out.println("단백질량은? : " + dan);
-                System.out.println("지방량은? : " + ji);
+                System.out.println("이 음식의 칼로리는? : " + fCal);
+                System.out.println("탄수화물량은? : " + fTan);
+                System.out.println("단백질량은? : " + fDan);
+                System.out.println("지방량은? : " + fJi);
                 System.out.println("밥을 먹은 시간대는? : " + eatTime);
-                System.out.println("음식에 사용한 돈은? : " + price);
-                System.out.println("건강한 식단을 지키셨나요? : " + gfbf);
+                System.out.println("음식에 사용한 돈은? : " + fPrice);
+                System.out.println("건강한 식단을 지키셨나요? : " + healthyGbn);
                 System.out.println();
+
+                resultSet.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();

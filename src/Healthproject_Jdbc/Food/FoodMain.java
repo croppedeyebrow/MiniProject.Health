@@ -33,7 +33,7 @@ public class FoodMain {
                 case 1:
                     System.out.print("오늘 먹은 음식은 무엇인가요?? : ");
                     String foodName = scanner.nextLine();
-                    FoodVo food1 = new FoodVo(foodName, 0, 0, 0, 0, 0, 0, "");
+                    FoodVo food1 = new FoodVo(0,foodName, 0, 0, 0, 0, 0, 0, 0);
                     boolean added1 = foodDao.AddFood(food1);
 
                     if (added1) {
@@ -62,7 +62,7 @@ public class FoodMain {
 
 
                     scanner.nextLine();
-                    FoodVo food2 = new FoodVo("", totalCalories, 0, 0, 0, 0, 0, "");
+                    FoodVo food2 = new FoodVo(0,"", totalCalories, 0, 0, 0, 0, 0, 0);
                     boolean added2 = foodDao.AddFood(food2);
 
                     if (added2) {
@@ -74,48 +74,48 @@ public class FoodMain {
 
                 case 3:
                     System.out.print("하루 동안의 탄/단/지를 입력해주세요: ");
-                    int tanTotal = 0; // 탄수화물 누적 변수
-                    int danTotal = 0; // 단백질 누적 변수
-                    int jiTotal = 0;  // 지방 누적 변수
+                    int ftanTotal = 0; // 탄수화물 누적 변수
+                    int fdanTotal = 0; // 단백질 누적 변수
+                    int fjiTotal = 0;  // 지방 누적 변수
 
 // 아침, 점심, 저녁 각각의 탄/단/지를 입력 받아 누적합니다.
                     System.out.print("아침 식단 탄수화물 입력: ");
                     int breakfastTan = scanner.nextInt();
-                    tanTotal += breakfastTan;
+                    ftanTotal += breakfastTan;
 
                     System.out.print("아침 식단 단백질 입력: ");
                     int breakfastDan = scanner.nextInt();
-                    danTotal += breakfastDan;
+                    fdanTotal += breakfastDan;
 
                     System.out.print("아침 식단 지방 입력: ");
                     int breakfastJi = scanner.nextInt();
-                    jiTotal += breakfastJi;
+                    fjiTotal += breakfastJi;
 
                     System.out.print("점심 식단 탄수화물 입력: ");
                     int lunchTan = scanner.nextInt();
-                    tanTotal += lunchTan;
+                    ftanTotal += lunchTan;
 
                     System.out.print("점심 식단 단백질 입력: ");
                     int lunchDan = scanner.nextInt();
-                    danTotal += lunchDan;
+                    fdanTotal += lunchDan;
 
                     System.out.print("점심 식단 지방 입력: ");
                     int lunchJi = scanner.nextInt();
-                    jiTotal += lunchJi;
+                    fjiTotal += lunchJi;
 
                     System.out.print("저녁 식단 탄수화물 입력: ");
                     int dinnerTan = scanner.nextInt();
-                    tanTotal += dinnerTan;
+                    ftanTotal += dinnerTan;
 
                     System.out.print("저녁 식단 단백질 입력: ");
                     int dinnerDan = scanner.nextInt();
-                    danTotal += dinnerDan;
+                    fdanTotal += dinnerDan;
 
                     System.out.print("저녁 식단 지방 입력: ");
                     int dinnerJi = scanner.nextInt();
-                    jiTotal += dinnerJi;
+                    fjiTotal += dinnerJi;
 
-                    FoodVo food3 = new FoodVo("", 0, tanTotal, danTotal, jiTotal, 0, 0, "");
+                    FoodVo food3 = new FoodVo(0,"", 0, ftanTotal, fdanTotal, fjiTotal, 0, 0, 0);
                     boolean added3 = foodDao.AddFood(food3);
 
                     if (added3) {
@@ -145,7 +145,7 @@ public class FoodMain {
                             System.out.println("잘못된 선택입니다.");
                             continue;
                     }
-                    FoodVo food4 = new FoodVo("", 0, 0, 0, 0, eatTimeChoice, 0, "");
+                    FoodVo food4 = new FoodVo(0,"", 0, 0, 0, 0, eatTimeChoice, 0, 0);
                     boolean added4 = foodDao.AddFood(food4);
 
 
@@ -162,7 +162,7 @@ public class FoodMain {
                     int totalspent =0;
                     scanner.nextLine();
                     totalspent +=price;
-                    FoodVo food5 = new FoodVo("", 0, 0, 0, 0, 0, totalspent, "");
+                    FoodVo food5 = new FoodVo(0,"", 0, 0, 0, 0, 0, totalspent, 0);
                     boolean added5 = foodDao.AddFood(food5);
 
                     if (added5) {

@@ -2,7 +2,7 @@ package Healthproject_Jdbc.Challenge;
 
 import Healthproject_Jdbc.Food.FoodDao;
 import Healthproject_Jdbc.MainView.MainViewMain;
-import Healthproject_Jdbc.Workout.WorkoutDao;
+import Healthproject_Jdbc.Workout.WorkoutDAO;
 import Healthproject_Jdbc.common.Common;
 
 import java.sql.Connection;
@@ -14,7 +14,7 @@ public class ChallengeMain {
         Scanner scanner = new Scanner(System.in);
         Connection conn = Common.getConnection(); // 데이터베이스 연결을 얻어오는 메서드 호출
 
-        WorkoutDao workoutDao = new WorkoutDao(conn);
+        WorkoutDAO workoutDao = new WorkoutDAO(conn);
         FoodDao foodDao = new FoodDao(conn);
         ChallengeDao challengeDao = new ChallengeDao(conn, workoutDao, foodDao);
 

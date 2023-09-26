@@ -1,19 +1,11 @@
 package Healthproject_Jdbc.Workout;
 
-public class WorkoutVo {
+public class WorkoutVO {
     private int workoutId;
     private int workoutType;
-    private int burnedCal;
     private int workoutTime;
+    private int burnedCal;
     private int gymPrice;
-
-    public WorkoutVo(int workoutId, int workoutType, int burnedCal, int workoutTime, int gymPrice) {
-        this.workoutId = workoutId;
-        this.workoutType = workoutType;
-        this.burnedCal = burnedCal;
-        this.workoutTime = workoutTime;
-        this.gymPrice = gymPrice;
-    }
 
     public int getWorkoutId() {
         return workoutId;
@@ -31,14 +23,6 @@ public class WorkoutVo {
         this.workoutType = workoutType;
     }
 
-    public int getBurnedCal() {
-        return burnedCal;
-    }
-
-    public void setBurnedCal(int burnedCal) {
-        this.burnedCal = burnedCal;
-    }
-
     public int getWorkoutTime() {
         return workoutTime;
     }
@@ -47,11 +31,27 @@ public class WorkoutVo {
         this.workoutTime = workoutTime;
     }
 
+    public int getBurnedCal() {
+        return burnedCal;
+    }
+
+    public void setBurnedCal(int burnedCal) {
+        this.burnedCal = burnedCal;
+    }
+
     public int getGymPrice() {
         return gymPrice;
     }
 
     public void setGymPrice(int gymPrice) {
+        this.gymPrice = gymPrice;
+    }
+
+    public WorkoutVO(int workoutId, int workoutType, int workoutTime, int burnedCal, int gymPrice) {
+        this.workoutId = workoutId;
+        this.workoutType = workoutType;
+        this.workoutTime = workoutTime;
+        this.burnedCal = burnedCal;
         this.gymPrice = gymPrice;
     }
 }
